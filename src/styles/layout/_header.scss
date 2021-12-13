@@ -1,0 +1,233 @@
+header {
+  box-shadow: inset 0 -1px 0 #ebf5ff;
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  .navbar {
+    padding: 21px 0;
+    .hamburger {
+      display: none;
+      @include mq("laptop", max) {
+        display: block;
+      }
+    }
+    .dropdown {
+      position: relative;
+      display: flex;
+
+      &-content {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        top: 101px;
+        background: #f5f5f5;
+        .dropmenu {
+          &-nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 0;
+            .dropmenu-link {
+              padding: 20px;
+              &.active {
+                background-color: white;
+              }
+              a {
+                font-weight: 800;
+                font-size: 14px;
+                line-height: 16px;
+                color: $gray;
+                position: relative;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  background-image: url("../images/chevron-right.png");
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  width: 12px;
+                  height: 12px;
+                  right: -20px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+          &-content {
+            background-color: white;
+            padding: 27px 53px;
+            .submenu {
+              display: flex;
+              margin-top: 40px;
+              li {
+                margin-right: 50px;
+                a {
+                  display: block;
+                  text-align: center;
+                  .submenu-img {
+                    opacity: 0.8;
+                  }
+                  .submenu-name {
+                    margin-top: 24px;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: black;
+                  }
+                  &:hover {
+                    .submenu-img {
+                      opacity: 1;
+                    }
+                    .submenu-name {
+                      font-weight: 700;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .mobile-view {
+          display: none;
+          h5 {
+            color: black;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 33px;
+            padding: 32px 0 16px;
+            margin: 0;
+            border-bottom: 1px solid rgba(208, 208, 208, 0.4);
+          }
+          .menu-item {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(208, 208, 208, 0.4);
+            position: relative;
+            &::after {
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 7px solid $cyan;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            .menu-link {
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 24px;
+            }
+            small {
+              display: block;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+        }
+        @include mq("laptop", max) {
+          position: relative;
+          margin: 0px;
+          top: 0;
+          .container {
+            display: none;
+          }
+          .mobile-view {
+            display: block;
+          }
+        }
+      }
+
+      @include mq("laptop", max) {
+        flex-direction: column;
+        &.show {
+          .nav-link {
+            &::before {
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 7px solid $cyan;
+              left: 0;
+              margin-right: 24px;
+            }
+            span {
+              display: none;
+            }
+          }
+          .dropdown-content {
+            display: block;
+          }
+        }
+      }
+    }
+    &-nav {
+      align-items: center;
+      height: 100%;
+      .nav-item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .nav-link {
+        color: $gray;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 7px solid $cyan;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-50%);
+        }
+        @include mq("laptop") {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+      }
+      @include mq("laptop", max) {
+        display: none;
+        &.active {
+          display: flex;
+          position: absolute;
+          background: white;
+          top: 101px;
+          left: 0px;
+          flex-direction: column;
+          height: calc(100vh - 101px);
+          width: 100%;
+          z-index: 11;
+          overflow: auto;
+          .nav-item {
+            display: flex;
+            width: 100%;
+            height: auto;
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+          }
+          .nav-link {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 24px;
+            color: black;
+            padding: 16px 0 !important;
+            width: 100%;
+            border-bottom: 1px solid rgba(208, 208, 208, 0.4);
+            position: relative;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,333 @@
+main {
+  @extend %topGap;
+}
+section {
+  margin-bottom: 0px;
+  @include mq("phone", max) {
+    margin-bottom: 0px;
+  }
+}
+body {
+  background-color: #09060e;
+}
+.elementor-38 .elementor-element.elementor-element-6FC9iB8M, .elementor-38 .elementor-element.elementor-element-6FC9iB8M > .elementor-background-overlay {
+  border-radius: 0 !important;
+}
+.hero-section {
+  .hero {
+    &-slides {
+      height: 700px;
+      @include mq("tablet", max) {
+        height: 400px;
+      }
+    }
+    &-slide {
+      padding: 0 60px;
+      @extend %fixedContent;
+      @include mq("phone", max) {
+        padding: 0 12px;
+      }
+      .btn-play {
+        @include mq("phone", max) {
+          display: none;
+        }
+      }
+    }
+    &-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 96px;
+      line-height: 113px;
+      color: white;
+      border-bottom: 1px solid $cyan;
+      @include mq("laptop", max) {
+        font-size: 36px;
+        line-height: 43px;
+      }
+    }
+    &-content {
+      margin: 38px 0 20px;
+      font-family: "Apercu";
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 39px;
+      color: white;
+      @include mq("tablet", max) {
+        font-size: 18px;
+      }
+    }
+  }
+  .slick-arrow {
+    @include mq("tablet", max) {
+      display: none !important;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    &::before {
+      color: $cyan;
+    }
+  }
+  .slick-dots {
+    bottom: 23px;
+    li {
+      button {
+        &::before {
+          color: white;
+          font-size: 9px;
+        }
+      }
+    }
+    .slick-active {
+      button {
+        &::before {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
+
+.trust-section {
+  margin-bottom: 75px;
+  padding: 80px 0 100px;
+  background-color: #f9fbfc;
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 56px;
+  }
+  .slick-slider {
+    margin: 48px 0;
+    .slick-list {
+      margin: 0 240px;
+      @include mq("laptop-wide", max) {
+        margin: 0 50px;
+      }
+    }
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+    .trust-img {
+      height: 100%;
+      img {
+        margin: auto;
+        width: 160px;
+        // height: 35px;
+      }
+    }
+    .slick-arrow {
+      width: 42px;
+      height: auto;
+      &::before {
+        font-size: 0;
+      }
+      img {
+        @include mq("laptop", max) {
+          width: 25px;
+          height: 40px;
+        }
+      }
+    }
+    .slick-next {
+      right: 40px;
+      @include mq("laptop", max) {
+        right: 20px;
+      }
+    }
+    .slick-prev {
+      left: 40px;
+      @include mq("laptop", max) {
+        left: 20px;
+      }
+    }
+  }
+}
+
+.mission-section {
+  &__detail {
+    h2 {
+      border-bottom: 4px solid $cyan;
+    }
+    p {
+      font-size: 24px;
+      line-height: 36px;
+      color: #535353;
+    }
+  }
+}
+
+.products-section {
+  h2 {
+    border-bottom: 4px solid $cyan;
+  }
+  .product-item {
+    margin-top: 80px;
+    @include mq("phone", max) {
+      margin-top: 40px;
+    }
+    &__img {
+      position: relative;
+      &::before {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 140px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 177, 207, 0.8);
+        filter: blur(120px);
+      }
+      h3 {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        padding-left: 10px;
+        color: white;
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    p {
+      margin-top: 50px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+.news-section {
+  h2 {
+    margin-bottom: 50px;
+  }
+  .news-item {
+    padding: 0 12px;
+    @include mq("phone", max) {
+      padding: 0;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &__content {
+      padding: 40px 20px;
+      background: rgba(239, 247, 249, 0.6);
+      h3 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+      .divider {
+        width: 60%;
+        height: 4px;
+        background: #00b1cf;
+        margin: 15px 0;
+      }
+      .news-description {
+        font-family: "Raleway";
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    &__author {
+      display: flex;
+      margin: 10px 0;
+      align-items: center;
+      .author-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .author-detail {
+        margin-left: 20px;
+        h4 {
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 56px;
+          letter-spacing: 0.2px;
+        }
+        p {
+          font-family: "Raleway";
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .arrow-btns {
+    text-align: right;
+    margin-top: 50px;
+    .custom-arrow {
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $cyan;
+      border: unset;
+    }
+  }
+}
+
+.testimonial-section {
+  padding: 60px 0;
+  background: #fbfbfb;
+  @include mq("phone", max) {
+    height: 450px;
+  }
+  h2 {
+    margin-bottom: 160px;
+  }
+  .testimonial-item {
+    padding: 100px 23px 40px;
+    margin-bottom: 100px;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    &__avatar {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translatex(-50%);
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+    }
+    &__name {
+      font-family: "GT Walsheim Pro";
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &__role {
+      font-family: "GT Walsheim Pro";
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 56px;
+      padding-bottom: 16px;
+      border-bottom: 4px solid $cyan;
+    }
+    &__text {
+      p {
+        margin: 16px 0;
+        font-family: "GT Walsheim Pro";
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+}
