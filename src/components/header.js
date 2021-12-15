@@ -3,24 +3,6 @@ import { Link } from "gatsby"
 import { Logo } from "../utils/imgImport"
 import NavDropdownMenu from "./NavDropdownMenu"
 
-// const menus = [
-//   {
-//     name: "PRODUCTS",
-//   },
-//   {
-//     name: "Aplications",
-//   },
-//   {
-//     name: "videos",
-//   },
-//   {
-//     name: "downloads",
-//   },
-//   {
-//     name: "Company",
-//   },
-// ]
-
 const Header = () => {
   const [hambugerActive, setHambugerActiveState] = useState(false)
   const [state, setState] = useReducer(

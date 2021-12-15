@@ -1,6 +1,6 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import { withPrefix, graphql } from "gatsby";
+// import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 import '../elementor/assets/lib/eicons/css/elementor-icons.min.css';
 import '../elementor/assets/css/common.min.css';
 import '../elementor/assets/css/frontend.min.css';
@@ -13,19 +13,18 @@ import '../elementor/assets/lib/font-awesome/css/v4-shims.min.css';
 import '../elementor/assets/lib/font-awesome/css/font-awesome.min.css';
 
 const IndexPage = ({data}) => {
-  const homeContent = data?.allWpPage.edges[0].node.content;
-  const customCSS = data?.allWpPage.edges[0].node.customCSS;
+  const homeContent = data?.allWpPage.edges[0].node.styledContent;
+  console.log(homeContent);
 
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: homeContent }} />
-      <Helmet>
+      {/* <Helmet>
         <style id="custom-css">
           {customCSS}
         </style>
 
-        <script src={withPrefix('v4-shims.js')} type="text/javascript" />
-      </Helmet>
+      </Helmet> */}
     </div>
   )
 }
@@ -42,7 +41,7 @@ query MyQuery {
         title
         uri
         link
-        customCSS
+        styledContent
       }
     }
   }
