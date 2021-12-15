@@ -3,7 +3,11 @@ import Footer from "./footer"
 import Header from "./header"
 import { Helmet } from "react-helmet"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, data }) => {
+  const happyAddonCSS = data?.allWpPage.edges[0].node.happyAddon;
+  const footer = data?.allWp.nodes[0].getElementorTemplate.footer;
+  const header = data?.allWp.nodes[0].getElementorTemplate.header;
+  const globalCSS = data?.allWp.nodes[0].getElementorTemplate.globalCSS;
   return (
     <>
       <Helmet>
@@ -18,10 +22,16 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           type="text/css"
         />
+        <style id="global-css">
+          {globalCSS}
+        </style>
+        <style id="happy-addon-css">
+          {happyAddonCSS}
+        </style>
       </Helmet>
-      <Header />
+      <Header data={header} />
       <main>{children}</main>
-      <Footer />
+      <Footer data={footer} />
     </>
   )
 }
