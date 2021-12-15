@@ -1,7 +1,7 @@
 import React from "react";
 // import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-import '../wp-assets/wp-assets';
+import '../wp-assets';
 
 const IndexPage = ({data}) => {
   const homeContent = data?.allWpPage.edges[0].node.styledContent;
