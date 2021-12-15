@@ -1,21 +1,22 @@
 import React from "react";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import '../wp-assets';
 
 const IndexPage = ({data}) => {
   const homeContent = data?.allWpPage.edges[0].node.styledContent;
-  console.log(homeContent);
+  const happyAddonCSS = data?.allWpPage.edges[0].node.happyAddon;
+  console.log(happyAddonCSS);
 
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: homeContent }} />
-      {/* <Helmet>
+      <Helmet>
         <style id="custom-css">
-          {customCSS}
+          {happyAddonCSS}
         </style>
 
-      </Helmet> */}
+      </Helmet>
     </div>
   )
 }
@@ -33,6 +34,8 @@ query MyQuery {
         uri
         link
         styledContent
+        happyAddon
+        title
       }
     }
   }
