@@ -1,16 +1,7 @@
 import React from "react";
 // import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-import '../elementor/assets/lib/eicons/css/elementor-icons.min.css';
-import '../elementor/assets/css/common.min.css';
-import '../elementor/assets/css/frontend.min.css';
-import '../elementor/assets/lib/font-awesome/css/fontawesome.min.css';
-import '../elementor/assets/lib/font-awesome/css/brands.min.css';
-import '../elementor/assets/lib/font-awesome/css/solid.min.css';
-import '../elementor/assets/lib/font-awesome/css/regular.min.css';
-import '../elementor/assets/lib/font-awesome/css/all.min.css';
-import '../elementor/assets/lib/font-awesome/css/v4-shims.min.css';
-import '../elementor/assets/lib/font-awesome/css/font-awesome.min.css';
+import '../wp-assets/wp-assets';
 
 const IndexPage = ({data}) => {
   const homeContent = data?.allWpPage.edges[0].node.styledContent;

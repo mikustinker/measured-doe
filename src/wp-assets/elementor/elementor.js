@@ -1,0 +1,11 @@
+import './assets/lib/eicons/css/elementor-icons.min.css';
+import './assets/css/common.min.css';
+import './assets/css/frontend.min.css';
+import './assets/lib/font-awesome/css/fontawesome.min.css';
+import './assets/lib/font-awesome/css/brands.min.css';
+import './assets/lib/font-awesome/css/solid.min.css';
+import './assets/lib/font-awesome/css/regular.min.css';
+import './assets/lib/font-awesome/css/all.min.css';
+import './assets/lib/font-awesome/css/v4-shims.min.css';
+import './assets/lib/font-awesome/css/font-awesome.min.css';
+import './assets/lib/animations/animations.min.css';
